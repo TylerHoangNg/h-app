@@ -5,7 +5,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const { port, mongoURI } = require('./config')
-const transactionsRoutes = require('./routes/transaction')
+const transactionsRoutes = require('./routes/transactions')
 const path = require('path')
 
 app.use(cors())
@@ -17,12 +17,15 @@ mongoose.connect(mongoURI, {
         useUnifiedTopology: true,
     })
     .then(() => console.log('MongoDb database is connected'))
-    .catch((err) => console.log('disconnected ' + err))
+    .catch((err) => console.log(err))
 
 app.use('/api/transactions', transactionsRoutes)
 
-app.get('/', function(req, res) {
-    res.send('Hello World')
-})
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/public'))
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'))
+    })
+}
 
 app.listen(port, () => console.log('Express is running at port ' + port))

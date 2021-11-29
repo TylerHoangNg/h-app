@@ -1,30 +1,96 @@
 <script>
-	export let name;
+import axios from "axios";
+import Transaction from "./components/Transaction.svelte";
+import SummaryCard from "./components/SummaryCard.svelte";
+import Loading from "./components/Loading.svelte";
+import {
+    onMount
+} from "svelte";
+import {
+    transactions,
+    sortedTransactions,
+    income,
+    expenses,
+    balance
+} from "./stores";
+let input = 0;
+let typeOfTransaction = "+";
+let loading = false;
+$: disabled = !input;
+onMount(async () => {
+    loading = true;
+    const {
+        data
+    } = await axios.get("/api/transactions");
+    $transactions = data;
+    loading = false;
+});
+async function addTransaction() {
+    const transaction = {
+        date: new Date().getTime(),
+        value: typeOfTransaction === "+" ? input : input * -1
+    };
+    const response = await axios.post("/api/transactions", transaction);
+    $transactions = [response.data, ...$transactions];
+    input = 0;
+}
+async function removeTransaction(id) {
+    const response = await axios.delete("/api/transactions/" + id);
+    if (response.data.id === id) {
+        $transactions = $transactions.filter(t => t._id !== id);
+    }
+}
 </script>
-
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  
+  <style>
+.app {
+    margin: 40px auto;
+    max-width: 500px;
+}
 </style>
+
+<div class="app container">
+    <div class="field has-addons">
+        <p class="control">
+            <span class="select">
+                <select bind:value={typeOfTransaction}>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                </select>
+            </span>
+        </p>
+        <p class="control is-expanded">
+            <input
+                class="input"
+                type="number"
+                bind:value={input}
+                placeholder="Amount of money" />
+        </p>
+        <p class="control">
+            <button class="button" on:click={addTransaction} {disabled}>Save</button>
+        </p>
+    </div>
+    {#if loading}
+    <Loading />
+    {/if}
+
+    {#if $transactions.length > 0}
+    <SummaryCard mode="balance" value={$balance} />
+
+    <div class="columns">
+        <div class="column">
+            <SummaryCard mode="income" value={$income} />
+        </div>
+        <div class="column">
+            <SummaryCard mode="expenses" value={$expenses} />
+        </div>
+    </div>
+    <hr />
+    {:else if !loading}
+    <div class="notification">Add your first transaction</div>
+    {/if}
+
+    {#each $sortedTransactions as transaction (transaction._id)}
+    <Transaction {transaction} {removeTransaction} />
+    {/each}
+</div>

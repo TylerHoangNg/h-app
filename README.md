@@ -17,10 +17,15 @@
 -- Install library basic from client
 ``` npm install ```
 - MongoDB (Create value)
-``` export MONGO_URI='linkdatabase' ```
-``` mongodb+srv://admin:<password>@cluster0.veij3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority ``` 
-``` password: MitFnz5TdB8qTffe ```
-``` mongoURI: process.env.MONGO_URI ```
+```
+- export MONGO_URI='linkdatabase' 
+- mongodb+srv://admin:<password>@cluster0.veij3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+- password: MitFnz5TdB8qTffe 
+- mongoURI: process.env.MONGO_URI 
+```
+
+- Axios from client
+``` npm i axios ```
 ### --- JScript ---
 - Link api from server to client
 ```
