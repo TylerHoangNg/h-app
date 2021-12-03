@@ -1,96 +1,51 @@
 <script>
-import axios from "axios";
-import Transaction from "./components/Transaction.svelte";
-import SummaryCard from "./components/SummaryCard.svelte";
-import Loading from "./components/Loading.svelte";
-import {
-    onMount
-} from "svelte";
-import {
-    transactions,
-    sortedTransactions,
-    income,
-    expenses,
-    balance
-} from "./stores";
-let input = 0;
-let typeOfTransaction = "+";
-let loading = false;
-$: disabled = !input;
-onMount(async () => {
-    loading = true;
-    const {
-        data
-    } = await axios.get("/api/transactions");
-    $transactions = data;
-    loading = false;
-});
-async function addTransaction() {
-    const transaction = {
-        date: new Date().getTime(),
-        value: typeOfTransaction === "+" ? input : input * -1
-    };
-    const response = await axios.post("/api/transactions", transaction);
-    $transactions = [response.data, ...$transactions];
-    input = 0;
+import Footer from "./views/partials/footer.svelte";
+import Header from "./views/partials/header.svelte";
+import Main from "./views/layouts/home/main.svelte";
+import Blog from "./views/layouts/blog/index.svelte";
+import Company from "./views/layouts/company/index.svelte";
+import LibLoader from './views/lib/libLoader.svelte';
+
+//header
+let items = ['Home', 'Blog','Company'];
+let activeItem = 'Home';
+const tabChange = (e) => {
+    activeItem = e.detail;
 }
-async function removeTransaction(id) {
-    const response = await axios.delete("/api/transactions/" + id);
-    if (response.data.id === id) {
-        $transactions = $transactions.filter(t => t._id !== id);
-    }
-}
+
+// start
+let run = ['Run'];
+
+// lib
+
 </script>
-  
-  <style>
-.app {
-    margin: 40px auto;
-    max-width: 500px;
-}
-</style>
-
-<div class="app container">
-    <div class="field has-addons">
-        <p class="control">
-            <span class="select">
-                <select bind:value={typeOfTransaction}>
-                    <option value="+">+</option>
-                    <option value="-">-</option>
-                </select>
-            </span>
-        </p>
-        <p class="control is-expanded">
-            <input
-                class="input"
-                type="number"
-                bind:value={input}
-                placeholder="Amount of money" />
-        </p>
-        <p class="control">
-            <button class="button" on:click={addTransaction} {disabled}>Save</button>
-        </p>
+<LibLoader/>
+<!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    {#if loading}
-    <Loading />
+  </div>
+<!-- ***** Preloader End ***** -->
+
+<on-headers>
+    <Header {activeItem} {items} on:tabChange={tabChange}/>
+</on-headers>
+
+<div role="main">
+    {#if activeItem === 'Home'}
+        <Main/>
+    {:else if activeItem === 'Blog'}
+        <Blog/>
+    {:else if activeItem === 'Company'}
+        <Company/>
     {/if}
-
-    {#if $transactions.length > 0}
-    <SummaryCard mode="balance" value={$balance} />
-
-    <div class="columns">
-        <div class="column">
-            <SummaryCard mode="income" value={$income} />
-        </div>
-        <div class="column">
-            <SummaryCard mode="expenses" value={$expenses} />
-        </div>
-    </div>
-    <hr />
-    {:else if !loading}
-    <div class="notification">Add your first transaction</div>
-    {/if}
-
-    {#each $sortedTransactions as transaction (transaction._id)}
-    <Transaction {transaction} {removeTransaction} />
-    {/each}
 </div>
+<footer class="pt-3 my-4 text-muted border-top">
+    <Footer />
+</footer>

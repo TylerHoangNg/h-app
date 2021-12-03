@@ -1,0 +1,108 @@
+.bubbles_wrap {
+  left: -1%;
+  right: 1%;
+  top: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute; }
+
+.bubble {
+  border-radius: 50%;
+  box-shadow: none;
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: #007bff; }
+
+.bubble.x1 {
+  -webkit-animation: animateBubble 14s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  -moz-animation: animateBubble 14s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  animation: animateBubble 14s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  width: 32px;
+  height: 32px;
+  border: solid 1px #007bff;
+  left: 10%;
+  top: 8%;
+  background-color: transparent !important; }
+
+.bubble.x2 {
+  -webkit-animation: animateBubble 1s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  -moz-animation: animateBubble 12s linear infinite, sideWays 1s ease-in-out infinite alternate;
+  animation: animateBubble 20s linear infinite, sideWays 3s ease-in-out infinite alternate;
+  width: 32px;
+  height: 32px;
+  border: solid 1px #ff9900;
+  left: 90%;
+  top: 30%;
+  background-color: transparent !important; }
+
+.bubble.x3 {
+  -webkit-animation: animateBubble 12s linear infinite, sideWays 1s ease-in-out infinite alternate;
+  -moz-animation: animateBubble 11s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  animation: animateBubble 25s linear infinite, sideWays 3s ease-in-out infinite alternate;
+  left: 30%;
+  top: 15%;
+  background: var(--main-color); }
+
+.bubble.x5 {
+  -webkit-animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  -moz-animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  left: 50%;
+  top: 35%;
+  background: var(--main-color); }
+
+.bubble.x6 {
+  -webkit-animation: animateBubble 11s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  -moz-animation: animateBubble 11s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  animation: animateBubble 11s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  left: 80%;
+  top: 5%;
+  background: var(--main-color); }
+
+.cloud {
+  z-index: 9999;
+  overflow: hidden;
+  pointer-events: none;
+  position: static;
+  top: -5%;
+  left: 25px;
+  border-image: initial; }
+
+.cloudimg {
+  transform: scale(0.25, 0.25);
+  -ms-transform: scale(0.25, 0.25);
+  -webkit-transform: scale(0.25, 0.25); }
+
+@keyframes animateBubble {
+  0% {
+    margin-top: 20%; }
+  100% {
+    margin-top: -30%; }
+  0% {
+    background-color: #ffd900; }
+  50% {
+    background-color: #00b3ff; }
+  100% {
+    background-color: #ffd900; } }
+
+@-webkit-keyframes animateBubble {
+  0% {
+    margin-top: 20%; }
+  100% {
+    margin-top: -30%; } }
+
+@-webkit-keyframes sideWays {
+  0% {
+    margin-left: 0; }
+  100% {
+    margin-left: 25px; } }
+
+@keyframes sideWays {
+  0% {
+    margin-left: 0; }
+  100% {
+    margin-left: 25px; } }
