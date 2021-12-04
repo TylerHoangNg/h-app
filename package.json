@@ -6,8 +6,8 @@
     "scripts": {
         "start": "node server.js",
         "build": "npm install --prefix client && npm run build --prefix client",
-        "client": "npm run dev --prefix client",
-        "server": "node server.js --ignore 'client/'",
+        "client": "rollup run dev --prefix client",
+        "server": "rollup server.js --ignore 'client/'",
         "dev": "concurrently \"npm run server\" \"npm run client\" ",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -23,6 +23,13 @@
     },
     "homepage": "https://github.com/TylerHoangNg/h-app#readme",
     "dependencies": {
+        "@rollup/plugin-commonjs": "^17.0.0",
+        "@rollup/plugin-node-resolve": "^11.0.0",
+        "rollup": "^2.3.4",
+        "rollup-plugin-css-only": "^3.1.0",
+        "rollup-plugin-livereload": "^2.0.0",
+        "rollup-plugin-svelte": "^7.0.0",
+        "rollup-plugin-terser": "^7.0.0",
         "body-parser": "^1.19.0",
         "concurrently": "^6.4.0",
         "cors": "^2.8.5",
