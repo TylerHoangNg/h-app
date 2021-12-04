@@ -9,6 +9,10 @@
   let srcimage = '/images/HorizanL-nobg.svg';
 </script>
 
+<style>
+  
+</style>
+
 <header
   class="header-area header-sticky wow slideInDown"
   data-wow-duration="0.75s"
@@ -57,11 +61,3 @@
     </div>
   </div>
 </header>
-
-<style>
-  .logo-horizan{
-    display: block;
-    height: auto;
-    max-width: 13%;
-  }
-</style>
