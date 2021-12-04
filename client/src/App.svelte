@@ -1,20 +1,19 @@
 <script>
 import Footer from "./views/partials/footer.svelte";
 import Header from "./views/partials/header.svelte";
-import Main from "./views/layouts/home/main.svelte";
-import Blog from "./views/layouts/blog/index.svelte";
-import Company from "./views/layouts/company/index.svelte";
+import Main from "./views/layouts/main.svelte";
 import LibLoader from './views/lib/libLoader.svelte';
+import Login from "./views/layouts/authentication/login.svelte";
 
 //header
-let items = ['Home', 'Blog','Company'];
+let items = ['Home','About','Blog','Company'];
 let activeItem = 'Home';
 const tabChange = (e) => {
     activeItem = e.detail;
 }
 
 // start
-let run = ['Run'];
+let run = 'Login';
 
 // lib
 
@@ -34,18 +33,11 @@ let run = ['Run'];
 <!-- ***** Preloader End ***** -->
 
 <on-headers>
-    <Header {activeItem} {items} on:tabChange={tabChange}/>
+    <Header {activeItem} {items} {run} on:tabChange={tabChange}/>
 </on-headers>
 
-<div role="main">
-    {#if activeItem === 'Home'}
-        <Main/>
-    {:else if activeItem === 'Blog'}
-        <Blog/>
-    {:else if activeItem === 'Company'}
-        <Company/>
-    {/if}
-</div>
+<Main {activeItem} {items} {run}/>
+
 <footer class="pt-3 my-4 text-muted border-top">
     <Footer />
 </footer>

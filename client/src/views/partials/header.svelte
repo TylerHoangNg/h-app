@@ -43,7 +43,7 @@
             >
               <div class="border-first-button">
                 <!-- svelte-ignore a11y-missing-attribute -->
-                <a on:click={() => dispatch("tabChange", run)}>Start</a>
+                <a on:click={() => dispatch("tabChange", run)}>{run}</a>
               </div>
             </li>
           </ul>
