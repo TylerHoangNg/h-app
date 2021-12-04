@@ -10,7 +10,12 @@
 </script>
 
 <style>
-  
+  .logo-horizan{
+  display: block;
+  height: auto;
+  max-width: 13%;
+}
+
 </style>
 
 <header
