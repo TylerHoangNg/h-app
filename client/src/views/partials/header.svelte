@@ -6,16 +6,15 @@
   export let activeItem;
   export let run;
 
-  let srcimage = '/images/HorizanL-nobg.svg';
+  let srcimage = './images/HorizanL-nobg.svg';
 </script>
 
 <style>
   .logo-horizan{
   display: block;
   height: auto;
-  max-width: 13%;
+  width: 13%;
 }
-
 </style>
 
 <header
