@@ -5,7 +5,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const { port, mongoURI } = require('./config.js')
-const transactionsRoutes = require('./routes/transactions.js')
+const transactionsRoutes = require('./routes/transaction.js')
 const path = require('path')
 
 app.use(cors())
