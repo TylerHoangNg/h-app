@@ -1,9 +1,9 @@
 <script>
-import Footer from "./views/partials/footer.svelte";
-import Header from "./views/partials/header.svelte";
-import Main from "./views/layouts/main.svelte";
-import LibLoader from './views/lib/libLoader.svelte';
-import Login from "./views/layouts/authentication/login.svelte";
+import Footer from "./components/partials/footer.svelte";
+import Header from "./components/partials/header.svelte";
+import Main from "./components/layouts/main.svelte";
+import LibLoader from './components/lib/libLoader.svelte';
+import Login from "./components/layouts/authentication/login.svelte";
 
 //header
 let items = ['Home','About','Blog','Company'];
