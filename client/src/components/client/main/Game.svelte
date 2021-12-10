@@ -1,0 +1,25 @@
+<script context="module">
+    export const game = 1
+</script>
+
+<div id="game-container"></div>
+
+
+<style>
+    #game-container {
+      margin: 0;
+      padding: 0;
+    }
+
+    #game-container {
+      min-width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+/* 
+    #game-container > canvas {
+      border-radius: 5px;
+    } */
+</style>
