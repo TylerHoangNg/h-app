@@ -1,25 +1,9 @@
-<script context="module">
-    export const game = 1
+<script>
+  import { Game, Scene, Text } from "svelte-phaser";
 </script>
 
-<div id="game-container"></div>
-
-
-<style>
-    #game-container {
-      margin: 0;
-      padding: 0;
-    }
-
-    #game-container {
-      min-width: 100vw;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-/* 
-    #game-container > canvas {
-      border-radius: 5px;
-    } */
-</style>
+<Game width={1200} height={600}>
+  <Scene key="main">
+    <Text x={140} y={180} text="hello world" />
+  </Scene>
+</Game>

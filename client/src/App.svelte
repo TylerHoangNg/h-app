@@ -30,7 +30,8 @@
     "/signup" : wrap(Signup, {reason:"authenticated"} , () => !$user),
     "/login" : wrap(Login, {reason:"authenticated"} , () => !$user),
     "/profile": wrap(Profile, {reason:"unauthenticated"}, ()=> $user),
-    "/about": wrap(About, () => !$user)
+    "/about": wrap(About, () => !$user),
+    "/rungame": wrap(Game, () => !$user)
   };
 
   function  conditionsFailed(event) {

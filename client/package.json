@@ -20,6 +20,9 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "h-app": "file:..",
+    "phaser": "^3.55.2",
+    "svelte-phaser": "^0.1.0-beta.2",
     "svelte-router-spa": "^6.0.3",
     "svelte-spa-router": "^3.2.0"
   }
