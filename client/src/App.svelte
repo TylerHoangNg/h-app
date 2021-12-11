@@ -11,7 +11,6 @@
   import Lib from "./components/lib/libLoader.svelte";
   import About from "./components/client/about/About.svelte";
   import Loading from "./components/lib/Loading.svelte";
-  import Game from "./components/client/main/Game.svelte";
 
   import { onMount } from "svelte";
   import axios from "axios";
