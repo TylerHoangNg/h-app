@@ -1,9 +1,24 @@
 <script>
-  import { Game, Scene, Text } from "svelte-phaser";
+  import MainGame from '../../../main/js/Main';
+  import { CanvasSize } from '../../../main/js/Environment';
+  const gameConfig = {
+    type: Phaser.AUTO,
+    width: CanvasSize.width,
+		height: CanvasSize.height,
+    parent: 'game',
+    pixelArt: true,
+    physics: {
+      default: "arcade",
+      arcade: {
+        gravity: { y: 0 }
+      }
+    },
+    scene: [MainGame],
+    scale: {
+        zoom: 2
+    }
+};
+const game = new Phaser.Game(gameConfig);
 </script>
 
-<Game width={1200} height={600}>
-  <Scene key="main">
-    <Text x={140} y={180} text="hello world" />
-  </Scene>
-</Game>
+<div id="game"/>

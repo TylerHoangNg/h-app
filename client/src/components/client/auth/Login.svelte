@@ -1,5 +1,6 @@
 <script>
   import axios from "axios";
+  import Footer from "../../configs/footer.svelte";
   import { user } from "../../../stores";
   import { push } from "svelte-spa-router";
   let username;
@@ -20,7 +21,7 @@
       push("/");
       location.reload();
     } catch (error) {
-      if (error.response.status === "403") {
+      if (error.response.status === 401) {
         username = "";
         password = "";
         errorMessage = "Invalid Credentials";
@@ -31,15 +32,21 @@
 
 <section class="vh-100" style="background-color: #fff;">
   <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="row d-flex justify-content-center align-items-center h-110">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <div class="card shadow-2-strong" style="border-radius: 1rem;">
           <div class="card-body p-3 text-center">
-            {#if errorMessage}
-              <p class="help is-danger">{errorMessage}</p>
-            {/if}
-            <form on:submit|preventDefault={login}>
-              <h4 class="mt-1 mb-5 pb-1">Login</h4>
+            <form on:submit|preventDefault={login} class="formtop">
+              <span>
+                <!-- svelte-ignore a11y-missing-attribute -->
+                <img class="logo-svg" src="images/Horizan-animation.svg"/>
+                <h4 class="mt-1 mb-4 pb-1">Welcome to Horizan</h4>
+              </span>
+              {#if errorMessage}
+                <h6 class="text-start text-danger">{errorMessage}</h6>
+              {:else}
+                <h6 class="text-start">Please login your account</h6>
+              {/if}
               <hr />
               <div class="field">
                 <!-- svelte-ignore a11y-label-has-associated-control -->
@@ -50,7 +57,7 @@
                     class="form-control"
                     placeholder="Username"
                     required
-                    class:is-danger={errorMessage}
+                    class:is-invalid={errorMessage}
                   />
                 </div>
               </div>
@@ -63,7 +70,7 @@
                     class="form-control"
                     placeholder="Password"
                     required
-                    class:is-danger={errorMessage}
+                    class:is-invalid={errorMessage}
                   />
                 </div>
               </div>
@@ -117,3 +124,15 @@
     </div>
   </div>
 </section>
+<Footer/>
+
+<style>
+  .h-110{
+    height:110%!important
+  }
+  .logo-svg{
+    width: 50%;
+    height: auto;
+  }
+
+</style>

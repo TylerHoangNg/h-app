@@ -1,3 +1,6 @@
+<script>
+  import Footer from "../../configs/footer.svelte";
+</script>
 <div id="about" class="about-us section">
     <div class="container">
       <div class="row">
@@ -49,3 +52,4 @@
       </div>
     </div>
   </div>
+<Footer/>

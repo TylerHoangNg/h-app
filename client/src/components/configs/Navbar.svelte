@@ -24,7 +24,7 @@
         <nav class="main-nav">
           <!-- ***** Logo Start ***** -->
           <a href="index.html" class="logo">
-            <img src="./images/HorizanL-nobg.svg" alt="Chain App Dev" />
+            <img src="images/Horizan-animation.svg" alt="Chain App Dev" />
           </a>
           <span
             class="nav"
@@ -42,7 +42,7 @@
           <!-- ***** Menu Start ***** -->
           <ul class="nav">
             <li class="scroll-to-section">
-              <a class="button active" href="/">Home</a>
+              <a class="button active" href="/"><i class="fas fa-home"/>Home</a>
             </li>
             <li class="scroll-to-section">
               <a class="button" href="/#/about">About</a>
@@ -54,16 +54,16 @@
                     &nbsp;&nbsp;{$user.username}
                   </a>
                   <a
-                    href="/#"
-                    class="buton is-primary-is-light"
-                    on:click={logout}>Log out</a
+                    href="#/rungame"
+                    class="buton is-primary-is-light">Start <i class="fas fa-play"/></a
                   >
                   <a
-                    href="#/rungame"
-                    class="buton is-primary-is-light">Start</a
+                    href="/#"
+                    class="buton is-primary-is-light"
+                    on:click={logout}>Log out <i class="fas fa-sign-out-alt"></i> </a
                   >
                 {:else}
-                  <a class="buton is-primary-is-light" href="#/login"> <i class="fa fa-sign-out" aria-hidden="true"></i> Login</a>
+                  <a class="buton is-primary-is-light" href="#/login"> <i class="fa fa-sign-out" aria-hidden="true"></i> Login <i class="fas fa-sign-in-alt"/></a>
                 {/if}
               </div>
             </li>

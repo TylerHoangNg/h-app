@@ -2,6 +2,7 @@
   import axios from "axios";
   import { user } from "../../../stores";
   import { push } from "svelte-spa-router";
+  import Footer from "../../configs/footer.svelte";
   let oldPassword;
   let newPassword;
 
@@ -86,3 +87,4 @@
     </div>
   </div>
 </section>
+<Footer/>
