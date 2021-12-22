@@ -3,7 +3,6 @@
 ![npm](https://img.shields.io/npm/v/npm)
 [![NPM version](https://badge.fury.io/js/nodemon.svg)](https://npmjs.org/package/nodemon)
 [![Travis Status](https://travis-ci.org/remy/nodemon.svg?branch=master)](https://travis-ci.org/remy/nodemon) 
-![Backers on Open Collective](https://opencollective.com/nodemon/backers/badge.svg)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fhorizan-app.vercel.app%2F)
 ## Test Code JScript and Svelte
 
