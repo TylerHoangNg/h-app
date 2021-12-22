@@ -1,7 +1,10 @@
 # Horizan-app
 [![Svelte v3](https://img.shields.io/badge/svelte-v3-orange.svg)](https://svelte.dev)
 ![npm](https://img.shields.io/npm/v/svelte-guard-history-router.svg)
-[![Windows Build](appveyor-image)](appveyor-url)
+[![NPM version](https://badge.fury.io/js/nodemon.svg)](https://npmjs.org/package/nodemon)
+[![Travis Status](https://travis-ci.org/remy/nodemon.svg?branch=master)](https://travis-ci.org/remy/nodemon) 
+[![Backers on Open Collective](https://opencollective.com/nodemon/backers/badge.svg)](#backers) 
+[![Sponsors on Open Collective](https://opencollective.com/nodemon/sponsors/badge.svg)](#sponsors)
 ## Test Code JScript and Svelte
 
 ## Core Structure
