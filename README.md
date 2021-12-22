@@ -36,7 +36,7 @@
       │
       └── README.md (you are here)
 
-### --- Library ---
+## Library
 - Express
 - Mongoose (MongoDB)
 - Cors
@@ -62,7 +62,7 @@
 
 - Axios from client
 ``` npm i axios ```
-### --- JScript ---
+## JScript
 - Link api from server to client
 ```
     devServer: {
@@ -74,7 +74,7 @@
         },
 ```
 
-### Local login
+## Local login
 ``` npm install passport-local-mongoose ```
 ``` npm install passport ```
 
