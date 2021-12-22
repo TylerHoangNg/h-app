@@ -4,7 +4,7 @@
 [![NPM version](https://badge.fury.io/js/nodemon.svg)](https://npmjs.org/package/nodemon)
 [![Travis Status](https://travis-ci.org/remy/nodemon.svg?branch=master)](https://travis-ci.org/remy/nodemon) 
 ![Backers on Open Collective](https://opencollective.com/nodemon/backers/badge.svg)
-![Chat](https://img.shields.io/discord/457912077277855764?label=chat&logo=discord)
+![Chat](https://img.shields.io/discord/nVZgMvBA?label=chat&logo=discord)
 ## Test Code JScript and Svelte
 
 ## Core Structure
