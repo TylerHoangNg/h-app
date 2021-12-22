@@ -1,7 +1,7 @@
 # Horizan-app
 [![Svelte v3](https://img.shields.io/badge/svelte-v3-orange.svg)](https://svelte.dev)
 ![npm](https://img.shields.io/npm/v/svelte-guard-history-router.svg)
-![](/chrome-web-store/stars/:storeId)
+![Horizan App](http://img.shields.io/npm /chrome-web-store/stars/:storeId)
 ## Test Code JScript and Svelte
 
 ## Core Structure
