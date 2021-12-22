@@ -1,7 +1,11 @@
 # Horizan-app
 [![Svelte v3](https://img.shields.io/badge/svelte-v3-orange.svg)](https://svelte.dev)
 ![npm](https://img.shields.io/npm/v/svelte-guard-history-router.svg)
-[![Windows Build][appveyor-image]][appveyor-url]
+[![NPM Version][npm-image]][npm-url]
+  [![NPM Downloads][downloads-image]][downloads-url]
+  [![Linux Build][ci-image]][ci-url]
+  [![Windows Build][appveyor-image]][appveyor-url]
+  [![Test Coverage][coveralls-image]][coveralls-url]
 ## Test Code JScript and Svelte
 
 ## Core Structure
