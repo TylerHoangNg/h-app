@@ -1,5 +1,5 @@
 # Horizan-app
-[![Svelte v3](https://img.shields.io/badge/svelte-v3-orange.svg)](https://svelte.dev)]
+[![Svelte v3](https://img.shields.io/badge/svelte-v3-orange.svg)](https://svelte.dev)
 ![npm](https://img.shields.io/npm/v/svelte-guard-history-router.svg)
 ## Test Code JScript and Svelte
 
