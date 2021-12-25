@@ -1,6 +1,4 @@
-<p align="center">
 # Horizan-app
-</p>
 [![Svelte v3](https://img.shields.io/badge/svelte-v3-orange.svg)](https://svelte.dev)
 ![npm](https://img.shields.io/npm/v/npm)
 [![NPM version](https://badge.fury.io/js/nodemon.svg)](https://npmjs.org/package/nodemon)
